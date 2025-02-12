@@ -15,6 +15,7 @@ class Constants {
     static const String createNewPasswordTitle = 'Create new password';
     static const String createNewPasswordSubTitle = 'Your new password must be unique from those previously used.';
 
+static const String guestTiltle = 'Continue as a guest';
 
 
 
