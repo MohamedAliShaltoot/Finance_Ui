@@ -1,20 +1,25 @@
+import 'package:finance_ui/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../app_colors.dart';
+
 
 class CustomTextField extends StatelessWidget {
    final String? hintTex;
    final Icon? suffixIcon;
    final double? width;
    final bool?  isPassword;
-  const CustomTextField({super.key, this.hintTex, this.suffixIcon, this.width, this.isPassword});
+   final String? Function(String?)? validator;
+   final TextEditingController? controller;
+  const CustomTextField({super.key, this.hintTex, this.suffixIcon, this.width, this.isPassword, this.validator, this.controller});
  
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: width ?? 331.w,
-      child: TextField(
+      child: TextFormField(
+        controller: controller,
+        validator:validator ,
         autofocus: false,
         cursorColor: AppColors.primaryColor,
         obscureText: isPassword ?? false,
@@ -33,7 +38,15 @@ class CustomTextField extends StatelessWidget {
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
           borderSide: BorderSide(color: AppColors.primaryColor, width: 2.w),
-        )
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8.r),
+          borderSide: BorderSide(color: Colors.red, width: 2.w),
+        ), 
+        focusedErrorBorder:  OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8.r),
+          borderSide: BorderSide(color: Colors.red, width: 2.w),
+        ), 
       ),
       ),
     );
