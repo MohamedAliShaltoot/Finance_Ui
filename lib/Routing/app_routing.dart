@@ -2,6 +2,7 @@ import 'package:finance_ui/Features/Auth/login_screen.dart';
 import 'package:finance_ui/Features/Auth/register_screen.dart';
 import 'package:finance_ui/Features/ForgetPassword/forget_screen.dart';
 import 'package:finance_ui/Features/OnBoarding/on_boarding_screen.dart';
+import 'package:finance_ui/Features/OtpVerfications/otp_verfications_screen.dart';
 import 'package:finance_ui/Routing/routes.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +20,9 @@ class AppRouts {
 
         case Routes.forgotPassScreen:
         return MaterialPageRoute(builder: (_) => const ForgetPasswordScreen());
+
+         case Routes.otpVerficationsScreen:
+        return MaterialPageRoute(builder: (_) => const OtpVerficationScreen());
 
 
 
