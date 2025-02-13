@@ -140,7 +140,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     textButtonColor: Colors.white,
                     onPressed: () {
                       if(formKey.currentState!.validate()){
-            
+                        //OtpVerficationScreen
+             Navigator.pushNamed(context, Routes.otpVerficationsScreen);
                       }
                     },
                   ),
